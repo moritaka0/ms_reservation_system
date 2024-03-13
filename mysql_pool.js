@@ -3,10 +3,10 @@ const mysql = require("mysql");
 
 // MySQL接続情報
 const dbConfig = {
-  host: "reservation-system-db.cusmiz3h0lbc.ap-northeast-1.rds.amazonaws.com",
-  user: "admin",
-  password: "adminadmin",
-  database: "reservation_system_db"
+  host: process.env.DB_ENDPOINT,
+  user: process.env.UID,
+  password: process.env.PASS,
+  database: "process.env.DB_NAME"
 };
 
 // MySQL接続プールを作成
