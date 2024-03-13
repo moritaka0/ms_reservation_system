@@ -45,49 +45,51 @@
         <span class="badge badge-danger">確認画面</span> >
         <span class="badge badge-secondary">完了画面</span>
       </p>
-      <table class="table">
-        <tbody>
-          <tr>
-            <th scope="row">予約日</th>
-            <td><%= reserveDate %></td>
-          </tr>
-          <tr>
-            <th scope="row">氏名</th>
-            <td><%= name %></td>
-          </tr>
-          <tr>
-            <th scope="row">部屋番号</th>
-            <td><%= roomNum %></td>
-          </tr>
-          <tr>
-            <th scope="row">利用人数</th>
-            <td><%= memberNum %>人</td>
-          </tr>
-          <tr>
-            <th scope="row">利用用途</th>
-            <td><%= reason %></td>
-          </tr>
-        </tbody>
-      </table>
-      <form action="complete" method="post" class="form-horizontal">
-        <input type="hidden" name="name" value="<%=name%>" />
-        <input type="hidden" name="roomNum" value="<%=roomNum%>" />
-        <input type="hidden" name="memberNum" value="<%=memberNum%>" />
-        <input type="hidden" name="reason" value="<%=reason%>" />
-        <input type="hidden" name="reserveDate" value="<%=reserveDate%>" />
+      <div class="mb-5">
+        <table class="table">
+          <tbody>
+            <tr>
+              <th scope="row">予約日</th>
+              <td><%= reserveDate %></td>
+            </tr>
+            <tr>
+              <th scope="row">氏名</th>
+              <td><%= name %></td>
+            </tr>
+            <tr>
+              <th scope="row">部屋番号</th>
+              <td><%= roomNum %></td>
+            </tr>
+            <tr>
+              <th scope="row">利用人数</th>
+              <td><%= memberNum %>人</td>
+            </tr>
+            <tr>
+              <th scope="row">利用用途</th>
+              <td><%= reason %></td>
+            </tr>
+          </tbody>
+        </table>
+        <form action="complete" method="post" class="form-horizontal">
+          <input type="hidden" name="name" value="<%=name%>" />
+          <input type="hidden" name="roomNum" value="<%=roomNum%>" />
+          <input type="hidden" name="memberNum" value="<%=memberNum%>" />
+          <input type="hidden" name="reason" value="<%=reason%>" />
+          <input type="hidden" name="reserveDate" value="<%=reserveDate%>" />
 
-        <div class="row">
-          <div class="col-sm-offset-2 col-sm-10">
-            <a href="/form" class="btn btn-secondary">戻る</a>
-            <input
-              type="submit"
-              name="reserveBtn"
-              value="予約を確定する"
-              class="btn btn-primary btn-wide"
-            />
+          <div class="row">
+            <div class="col-sm-offset-2 col-sm-10">
+              <a href="/form" class="btn btn-secondary">戻る</a>
+              <input
+                type="submit"
+                name="reserveBtn"
+                value="予約を確定する"
+                class="btn btn-primary btn-wide"
+              />
+            </div>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   </body>
 </html>

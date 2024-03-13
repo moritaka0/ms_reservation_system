@@ -59,79 +59,82 @@
         <span class="badge badge-secondary">確認画面</span> >
         <span class="badge badge-secondary">完了画面</span>
       </p>
-      <form method="post" action="confirm">
-        <div class="form-group row">
-          <label class="col-form-label col-md-3">予約希望日</label>
-          <!-- ここにカレンダー表示用のテキストボックスを追加 -->
-          <div class="col-md-5">
-            <input
-              type="text"
-              name="reserveDate"
-              id="datepicker"
-              class="form-control"
-              autocomplete="off"
-              placeholder="選択してください"
-              required
-            />
+      <div class="mb-5">
+        <form method="post" action="confirm">
+          <div class="form-group row">
+            <label class="col-form-label col-md-3">予約希望日</label>
+            <!-- ここにカレンダー表示用のテキストボックスを追加 -->
+            <div class="col-md-5">
+              <input
+                type="text"
+                name="reserveDate"
+                id="datepicker"
+                class="form-control"
+                autocomplete="off"
+                placeholder="選択してください"
+                readonly="readonly"
+                required
+              />
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-form-label col-md-3">氏名</label>
-          <div class="col-md-5">
-            <input
-              type="text"
-              name="name"
-              class="form-control"
-              placeholder="名前を入力してください"
-              required
-            />
+          <div class="form-group row">
+            <label class="col-form-label col-md-3">氏名</label>
+            <div class="col-md-5">
+              <input
+                type="text"
+                name="name"
+                class="form-control"
+                placeholder="名前を入力してください"
+                required
+              />
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-form-label col-md-3">部屋番号</label>
-          <div class="col-md-5">
-            <input
-              type="text"
-              name="roomNum"
-              class="form-control"
-              placeholder="部屋番号を入力してください"
-              required
-            />
+          <div class="form-group row">
+            <label class="col-form-label col-md-3">部屋番号</label>
+            <div class="col-md-5">
+              <input
+                type="text"
+                name="roomNum"
+                class="form-control"
+                placeholder="部屋番号を入力してください"
+                required
+              />
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-form-label col-md-3">利用人数</label>
-          <div class="col-md-5">
-            <input
-              type="text"
-              name="memberNum"
-              class="form-control"
-              placeholder="利用人数を入力してください"
-              required
-            />
+          <div class="form-group row">
+            <label class="col-form-label col-md-3">利用人数</label>
+            <div class="col-md-5">
+              <input
+                type="text"
+                name="memberNum"
+                class="form-control"
+                placeholder="利用人数を入力してください"
+                required
+              />
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-form-label col-md-3">利用用途</label>
-          <div class="col-md-5">
-            <input
-              type="text"
-              name="reason"
-              class="form-control"
-              placeholder="利用用途を記載してください"
-              required
-            />
+          <div class="form-group row">
+            <label class="col-form-label col-md-3">利用用途</label>
+            <div class="col-md-5">
+              <input
+                type="text"
+                name="reason"
+                class="form-control"
+                placeholder="利用用途を記載してください"
+                required
+              />
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-12">
-            <a href="/" class="btn btn-secondary">戻る</a>
-            <button type="submit" class="btn btn-primary">
-              予約内容を確認する
-            </button>
+          <div class="row">
+            <div class="col-12">
+              <a href="/" class="btn btn-secondary">戻る</a>
+              <button type="submit" class="btn btn-primary">
+                予約内容を確認する
+              </button>
+            </div>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
     <!-- bootstrap-datepickerのjavascriptコード -->
     <script>

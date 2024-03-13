@@ -6,7 +6,7 @@ const dbConfig = {
   host: process.env.DB_ENDPOINT,
   user: process.env.UID,
   password: process.env.PASS,
-  database: "process.env.DB_NAME"
+  database: process.env.DB_NAME
 };
 
 // MySQL接続プールを作成
