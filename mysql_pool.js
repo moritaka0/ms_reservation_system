@@ -1,5 +1,6 @@
 // mysql_pool.js MYSQLへの接続設定を記載
 const mysql = require("mysql");
+require("dotenv").config();
 
 // MySQL接続情報
 const dbConfig = {
