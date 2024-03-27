@@ -1,26 +1,26 @@
 const router = require("express").Router();
-const pool = require("../mysql_pool");
+const { db } = require("../firebase");
+const { collection, addDoc } = require("firebase/firestore");
 
-router.post("/", (req, res) => {
+router.post("/", async (req, res) => {
   const name = req.body.name;
   const roomNum = req.body.roomNum;
   const memberNum = req.body.memberNum;
   const reason = req.body.reason;
   const reserveDate = req.body.reserveDate;
-  const insertQuery =
-    "INSERT INTO reservation(reservation_date,name,roomNum,memberNum,reason) VALUES(?,?,?,?,?)";
-  //EJSのパスの指定はviewsフォルダーからのパスを記載する
-  pool.query(
-    insertQuery,
-    [reserveDate, name, roomNum, memberNum, reason],
-    (error, results, fields) => {
-      if (error) {
-        console.error("Error inserting data:", error.stack);
-        res.status(500).send("Internal Server Error");
-        return;
-      }
-      res.render("./complete/index.ejs");
-    }
-  );
+  try {
+    const dbCollection = collection(db, "reservation");
+    await addDoc(dbCollection, {
+      reservation_date: reserveDate,
+      name: name,
+      roomNum: roomNum,
+      memberNum: memberNum,
+      reason: reason
+    });
+    res.render("./complete/index.ejs");
+  } catch (error) {
+    console.error("Error fetching documents:", error);
+    res.status(500).send("Internal Server Error");
+  }
 });
 module.exports = router;
